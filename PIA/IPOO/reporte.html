@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <title>Producto Integrador de Aprendizaje</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../foticospuak/icono.png">
+</head>
+<body>
+    <header id="main-header">
+        <a id="logo-header" href="../index.html">
+            <span class="site-name">Producto Integrador de Aprendizaje</span>
+            <span class="site-desc">Diseño Avanzado de Páginas Web</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Introducción a Programación Orientada a Objetos</a>
+                    <div class="dropdown-content">
+                        <a href="../IPOO/reporte.html">Reporte de Código</a>
+                        <a href="../IPOO/helo.html">Código de Python</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Mantenimiento y Configuración de Equipos</a>
+                    <div class="dropdown-content">
+                        <a href="../Mante/reportedemante.html">Reporte de Mantenimiento</a>
+                        <a href="../Mante/videoexplicativo.html">Reporte de Mantenimiento (Videos)</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cover d-flex justify-content-center align-items-center flex-column">
+        <h1 class="holasw">Producto Integrador de Aprendizaje</h1>
+    </div>
+    <section id="main-content">
+        <article>
+            <header>
+                <h1><strong>Introducción a Programación Orientada a Objetos.</strong></h1>
+            </header>
+            <div class="content">
+                <p>Durante el semestre, vimos las bases del lenguaje de programación de Python, además de algunas cosas básicas dentro de la Programación Orientada a Objetos. Este código es una muestra de la culminación de esta Unidad De Aprendizaje. Lo que hace este código es simular un juego de blackjack, donde habrá 2 jugadores, además de que se puede seleccionar el nombre de los jugadores y el número de partidas a jugar. Después se repartirán cartas al azar y de esta manera se decidirá al ganador.</p>
+
+                <p>1. Iniciamos el código importando la biblioteca <strong>random</strong>, esto para que los valores repartidos sean aleatorios. </p>
+                <img src="../foticospuak/fotico1.png"><br>
+                <p>2. Después se crea la clase <strong>carta</strong>, la cual tiene el init con los valores self, valor y figura, seguidamente se define el str con el valor de self el cual escribe algo que podamos leer, por ejemplo una instancia carta con el valor de un as y la figura espada, entonces se imprimirá un As de espadas.</p><img src="../foticospuak/fotico2.png"><br>
+
+                <p>3. Posteriormente creamos la clase baraja, la cual le da nombre a las figuras y un valor, después defininimos barajear, la cual hace un shuffle el cual hace que barajee la baraja, después devuelve la última carta de la baraja, si la baraja esta vacía devuelve none.</p><img src="../foticospuak/fotico3.png"><br>
+                <p>4. A continuación, se crea la clase <strong>jugador</strong>, usamos init y le ponemos los valores de self, nombre, cartas y puntuación, después el método recibir carta agrega una lista de cartas y llama al método <strong>calcular puntuación</strong> para actualizar el puntaje de cada jugador, el <strong>calcular promedio</strong> calcula la puntuación total del jugador sumando los valores de las cartas que le hayan asignado, además si la puntuación supera los 21 y el jugador tiene un as, se le resta 10 puntos de la puntuación, después el método valor <strong>carta</strong> toma una carta y devuelve su valor numérico según las reglas del juego, los valores K, Q y J valen 10 puntos, mientras que el as vale 11 y las demás cartas su propio valor numérico, luego el mostrar cartas imprime en la consola las cartas que tiene el jugador y su puntuación total.</p><img src="../foticospuak/fotico4.png"><br>
+                <p>5. Seguidamente se define la clase <strong>juego</strong>, la cual tiene el init con los valores de jugadores, baraja, número de partidas y partidas ganadas, luego se define la función <strong>jugar partida</strong>. Antes de comenzar se barajea la baraja con self baraja barajear, el jugador recibe 2 cartas iniciales, después se hace un bucle for para cada jugador, dentro de ese bucle hay un while que se ejecuta mientras la puntuación de el jugador sea menor o igual a 16, el bucle se rompe cuando la puntuación de el jugador sea más de 16. </p><img src="../foticospuak/fotico5.png"><br>
+                <p>6. Después de todo eso, el método <strong>mostrar resultados</strong> es ejecutado, el cual muestra las cartas de cada jugador y determina si hay ganador en la partida, luego se crea una lista llamada <strong>ganadores</strong> que contiene a los jugadores que su puntuación es menor o igual a 21, comprueba si hay ganadores en la lista, si hay los encuentra con la función max, imprime el nombre del ganador y actualiza el diccionario self partidas ganadas incrementando en 1 el número de partidas ganadas para el ganador.</p><img src="../foticospuak/fotico6.png"><br>
+
+                <p>7. Luego la función <strong>jugar</strong> se encarga de contar el número de partida específica en self num partidas, usa un bucle for para iterar el número de partidas y después imprime un mensaje indicando el número de la partida y luego entra la función self jugador partida para llevar acabo la partida, después imprime los resultados finales, itera sobre el diccionario self partidas ganadas para imprimir el número de partidas ganadas por cada jugador y determina el ganador final con rl número mayor de partidas ganadas y ya imprime el nombre.</p><img src="../foticospuak/fotico7.png"><br>
+
+                <p>8. En esta parte del código se encarga de la interacción del usuario para recopilar la información antes de empezar el juego, usa la función input para que ingrese el nombre de el primer jugador al igual que el segundo jugador y el número de partidas a jugar, y con los datos ya se ejecuta el juego.</p><img src="../foticospuak/foticofinal.png"><br>
+                <p>9. Fin</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
